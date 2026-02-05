@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <verification-metadata xmlns="https://schema.gradle.org/dependency-verification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://schema.gradle.org/dependency-verification https://schema.gradle.org/dependency-verification/dependency-verification-1.1.xsd">
    <configuration>
-      <verify-metadata>false</verify-metadata>
+      <verify-metadata>true</verify-metadata>
       <verify-signatures>false</verify-signatures>
-      <trusting>
-         <trust group="^.*" regex="true"/>
-      </trusting>
    </configuration>
+   <components>
+      <component group="org.projectlombok" name="lombok" version="1.18.24">
+         <artifact name="lombok-1.18.24.jar">
+            <sha256 value="7175796277054f3b7efb32e6b222955f1157f9202ca52a5585098ce148ef2bc0"/>
+         </artifact>
+         <artifact name="lombok-1.18.24.pom">
+            <sha256 value="5973b7549429188096f6004df97b7b25e7914041b61c920f00f074d287c8028f"/>
+         </artifact>
+      </component>
+   </components>
 </verification-metadata>
