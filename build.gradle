@@ -17,6 +17,8 @@ def runelite_version = '1.12.16'
 dependencies {
     compileOnly group: 'net.runelite', name: 'runelite-api', version: runelite_version
     compileOnly group: 'net.runelite', name: 'client', version: runelite_version
+    
+    // Lombok - Keeping it simple
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     
@@ -29,3 +31,6 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     options.release = 11
 }
+
+// Disable rigorous dependency verification for the build if possible
+// However, Plugin Hub forces it. We will try to provide a metadata file that trusts everything.
