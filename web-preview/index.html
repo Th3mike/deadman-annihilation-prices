@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadman Wiki Price - Painel de Controle</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="card">
+        <h1>Deadman Wiki Price</h1>
+        <p>Configuração do ambiente de desenvolvimento RuneLite</p>
+        
+        <div class="status-grid">
+          <div class="status-item">
+            <h3>RuneLite Dependency</h3>
+            <p>1.10.19 <span class="badge badge-warning">Aguardando Repositório</span></p>
+          </div>
+          <div class="status-item">
+            <h3>IDE Status</h3>
+            <p>IntelliJ Community <span class="badge badge-success">Instalado</span></p>
+          </div>
+          <div class="status-item">
+            <h3>Client Status</h3>
+            <p>RuneLite Client <span class="badge badge-success">Instalado</span></p>
+          </div>
+        </div>
+
+        <div class="instruction-list">
+          <h3>Próximos Passos Obrigatórios:</h3>
+          <ul>
+            <li>1. Abra o <b>IntelliJ IDEA</b> no seu computador.</li>
+            <li>2. Vá em <b>File -> Open</b> e selecione <code>f:\GitHub\deadman-wiki-price</code>.</li>
+            <li>3. O IntelliJ detectará o <b>pom.xml</b>. Clique em <b>"Load Maven Project"</b>.</li>
+            <li>4. Se o erro persistir, no IntelliJ, abra o terminal (Alt+F12) e digite: <br>
+                <code>mvn clean install -U</code></li>
+            <li>5. <b>Importante</b>: Se o Maven ainda falhar, verifique se o IntelliJ está usando o repositório <code>https://repo.runelite.net</code> adicionado ao POM.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

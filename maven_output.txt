@@ -1,0 +1,52 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.dmmprices:deadman-wiki-price >------------------
+[INFO] Building Deadman Wiki Price 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ deadman-wiki-price ---
+[INFO] Deleting F:\GitHub\deadman-wiki-price\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ deadman-wiki-price ---
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ deadman-wiki-price ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to F:\GitHub\deadman-wiki-price\target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ deadman-wiki-price ---
+[INFO] skip non existing resourceDirectory F:\GitHub\deadman-wiki-price\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ deadman-wiki-price ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to F:\GitHub\deadman-wiki-price\target\test-classes
+[INFO] /F:/GitHub/deadman-wiki-price/src/test/java/com/dmmprices/DmmWikiPricePluginTest.java: F:\GitHub\deadman-wiki-price\src\test\java\com\dmmprices\DmmWikiPricePluginTest.java uses unchecked or unsafe operations.
+[INFO] /F:/GitHub/deadman-wiki-price/src/test/java/com/dmmprices/DmmWikiPricePluginTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ deadman-wiki-price ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit.JUnit3Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.dmmprices.DmmWikiPricePluginTest
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.dmmprices.DmmWikiPricePluginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ deadman-wiki-price ---
+[INFO] Building jar: F:\GitHub\deadman-wiki-price\target\deadman-wiki-price-1.0.0.jar
+[INFO] 
+[INFO] --- install:3.1.2:install (default-install) @ deadman-wiki-price ---
+[INFO] Installing F:\GitHub\deadman-wiki-price\pom.xml to C:\Users\maarc\.m2\repository\com\dmmprices\deadman-wiki-price\1.0.0\deadman-wiki-price-1.0.0.pom
+[INFO] Installing F:\GitHub\deadman-wiki-price\target\deadman-wiki-price-1.0.0.jar to C:\Users\maarc\.m2\repository\com\dmmprices\deadman-wiki-price\1.0.0\deadman-wiki-price-1.0.0.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.300 s
+[INFO] Finished at: 2026-02-05T06:20:58-03:00
+[INFO] ------------------------------------------------------------------------
