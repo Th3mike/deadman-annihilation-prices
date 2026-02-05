@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.dmmprices'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.runelite.net"
+    }
+}
+
+def runelite_version = '1.12.16'
+
+dependencies {
+    compileOnly group: 'net.runelite', name: 'runelite-api', version: runelite_version
+    compileOnly group: 'net.runelite', name: 'client', version: runelite_version
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation group: 'net.runelite', name: 'runelite-api', version: runelite_version
+    testImplementation group: 'net.runelite', name: 'client', version: runelite_version
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.release = 11
+}
