@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dmmprices</groupId>
-    <artifactId>deadman-wiki-price</artifactId>
+    <artifactId>deadman-annihilation-prices</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Deadman Wiki Price</name>
-    <description>Displays Deadman Mode item prices from the OSRS Wiki in the Grand Exchange.</description>
+    <name>Deadman Annihilation Prices</name>
+    <description>Real-time seasonal Deadman Mode prices from the OSRS Wiki.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
