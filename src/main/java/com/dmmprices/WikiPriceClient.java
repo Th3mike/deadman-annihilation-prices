@@ -8,21 +8,21 @@ import java.util.Collections;
 import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Handles communication with the OSRS Wiki Price API.
  * Fetches latest DMM prices and item mappings for searching.
  */
-@Slf4j
 @Singleton
 public class WikiPriceClient {
+	private static final Logger log = LoggerFactory.getLogger(WikiPriceClient.class);
 	private static final String API_URL = "https://prices.runescape.wiki/api/v1/dmm/latest";
 	private static final String MAPPING_URL = "https://prices.runescape.wiki/api/v1/osrs/mapping";
 	private static final String USER_AGENT = "Deadman Annihilation Price Plugin - @USER_DMM";
@@ -40,7 +40,6 @@ public class WikiPriceClient {
 	}
 
 	public void fetchPrices() {
-		// Fetch the latest seasonal DMM price data
 		fetchFromUrl(API_URL, (json) -> {
 			PriceResponse priceResponse = gson.fromJson(json, PriceResponse.class);
 			if (priceResponse != null && priceResponse.getData() != null) {
@@ -51,7 +50,6 @@ public class WikiPriceClient {
 	}
 
 	public void fetchMapping() {
-		// Fetch item IDs, names, and buy limits
 		fetchFromUrl(MAPPING_URL, (json) -> {
 			Type type = new TypeToken<java.util.List<ItemMapping>>() {
 			}.getType();
@@ -63,7 +61,6 @@ public class WikiPriceClient {
 		});
 	}
 
-	// Helper to handle async HTTP calls to the Wiki API
 	private void fetchFromUrl(String url, java.util.function.Consumer<String> consumer) {
 		Request request = new Request.Builder()
 				.url(url)
@@ -104,20 +101,57 @@ public class WikiPriceClient {
 		return itemMappings;
 	}
 
-	@Data
 	public static class PriceResponse {
 		private Map<Integer, PriceData> data;
+
+		public Map<Integer, PriceData> getData() {
+			return data;
+		}
+
+		public void setData(Map<Integer, PriceData> data) {
+			this.data = data;
+		}
 	}
 
-	@Data
 	public static class PriceData {
 		private Integer high;
 		private Integer highTime;
 		private Integer low;
 		private Integer lowTime;
+
+		public Integer getHigh() {
+			return high;
+		}
+
+		public void setHigh(Integer high) {
+			this.high = high;
+		}
+
+		public Integer getHighTime() {
+			return highTime;
+		}
+
+		public void setHighTime(Integer highTime) {
+			this.highTime = highTime;
+		}
+
+		public Integer getLow() {
+			return low;
+		}
+
+		public void setLow(Integer low) {
+			this.low = low;
+		}
+
+		public Integer getLowTime() {
+			return lowTime;
+		}
+
+		public void setLowTime(Integer lowTime) {
+			this.lowTime = lowTime;
+		}
 	}
 
-	@Data
 	public static class ItemMapping {
 		private int id;
 		private String name;
@@ -127,5 +161,69 @@ public class WikiPriceClient {
 		private int lowalch;
 		private int highalch;
 		private int value;
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getExamine() {
+			return examine;
+		}
+
+		public void setExamine(String examine) {
+			this.examine = examine;
+		}
+
+		public Integer getLimit() {
+			return limit;
+		}
+
+		public void setLimit(Integer limit) {
+			this.limit = limit;
+		}
+
+		public boolean isMembers() {
+			return members;
+		}
+
+		public void setMembers(boolean members) {
+			this.members = members;
+		}
+
+		public int getLowalch() {
+			return lowalch;
+		}
+
+		public void setLowalch(int lowalch) {
+			this.lowalch = lowalch;
+		}
+
+		public int getHighalch() {
+			return highalch;
+		}
+
+		public void setHighalch(int highalch) {
+			this.highalch = highalch;
+		}
+
+		public int getValue() {
+			return value;
+		}
+
+		public void setValue(int value) {
+			this.value = value;
+		}
 	}
 }
