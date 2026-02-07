@@ -1,9 +1,7 @@
 package com.dmmprices;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.Map;
 import javax.inject.Inject;
@@ -51,11 +49,9 @@ public class WikiPriceClient {
 
 	public void fetchMapping() {
 		fetchFromUrl(MAPPING_URL, (json) -> {
-			Type type = new TypeToken<java.util.List<ItemMapping>>() {
-			}.getType();
-			java.util.List<ItemMapping> mappings = gson.fromJson(json, type);
+			ItemMapping[] mappings = gson.fromJson(json, ItemMapping[].class);
 			if (mappings != null) {
-				itemMappings = mappings;
+				itemMappings = java.util.Arrays.asList(mappings);
 				log.info("Item mappings loaded successfully: {}", itemMappings.size());
 			}
 		});

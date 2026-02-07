@@ -66,10 +66,7 @@ public class DmmWikiPricePanel extends PluginPanel {
         searchBar.setPreferredSize(new Dimension(100, 35));
         searchBar.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         searchBar.setHoverBackgroundColor(ColorScheme.DARKER_GRAY_HOVER_COLOR);
-        try {
-            searchBar.getClass().getMethod("setPlaceholder", String.class).invoke(searchBar, "Search for items...");
-        } catch (Exception e) {
-        }
+        // Placeholder removed to avoid using reflection (against RuneLite rules)
 
         searchBar.addActionListener(e -> updateSearch());
         searchBar.addKeyListener(new KeyAdapter() {
